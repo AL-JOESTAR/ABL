@@ -19,7 +19,7 @@ class DashboardRedirectController extends Controller
 
         
         if ($user->name === 'Admin' || $user->email === 'admin@test.com') {
-            return view('dashboard'); 
+            return view('dashboard.dashboard'); 
         }
 
         
@@ -28,7 +28,7 @@ class DashboardRedirectController extends Controller
             ->exists();
 
         if ($hasRental) {
-            return view('dashboard');
+            return view('dashboard.dashboard');
         }
 
         return redirect()->route('home');

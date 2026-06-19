@@ -240,8 +240,7 @@
         <a href="#kontak">Kontak</a>
       </div>
       <div style="display:flex; gap:12px;">
-        <a class="btn btn-ghost">Masuk</a>
-        <a class="btn btn-primary">Jadwalkan Survei</a>
+        <a class="btn btn-primary">SEWA</a>
       </div>
     </nav>
   </div>
