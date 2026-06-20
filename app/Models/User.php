@@ -32,8 +32,19 @@ class User extends Authenticatable
         ];
     }
 
+    protected static function booted()
+    {
+        static::created(function ($user) {
+            $user->rentals()->create([
+                'status' => 'expired',
+                'start_date' => now(),
+                'end_date' => now()->addMonth(), // contoh 1 bulan
+            ]);
+        });
+    }
+
     public function rentals()
     {
-        return $this->hasMany(Rental::class);
+        return $this->hasOne(Rental::class);
     }
 }

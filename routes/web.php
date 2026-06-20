@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\DashboardRedirectController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QrController;
+use App\Http\Middleware\QrMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -25,5 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/qr',[QrController::class, 'index'])->middleware(QrMiddleware::class);
 
 require __DIR__.'/auth.php';

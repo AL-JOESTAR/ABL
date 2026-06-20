@@ -491,6 +491,7 @@
     <div class="foot-bottom">
       <span>© 2026 Andara Living. Seluruh hak cipta dilindungi.</span>
       <span>Jakarta, Indonesia</span>
+      <span>{{ Auth::user()->name }}</span>
     </div>
   </div>
 

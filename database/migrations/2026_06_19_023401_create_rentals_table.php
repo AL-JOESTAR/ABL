@@ -21,7 +21,7 @@ return new class extends Migration
             $table->enum('status', [
                 'active',
                 'expired'
-            ])->default('active');
+            ])->default('expired');
 
             $table->date('start_date');
             $table->date('end_date');
